@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+  min-height: 100vh;
+  background-image: url('./assets/bgc.png'); /* Ruta relativa */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background: transparent;
+}
+
+
+.theme-toggle-container {
+  position: fixed;
+  top: 40px;       /* ↘️ más abajo */
+  right: 40px;     /* ↙️ más hacia la izquierda */
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: fit-content;
+}
+
+
+
+
+/* Navbar centrado abajo */
+.navbar-container {
+  position: fixed;
+  bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;  /* aseguremos z layering */
+}
