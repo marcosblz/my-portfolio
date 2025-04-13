@@ -82,4 +82,9 @@
   }
   
   
+  :root {
+    --height: 50px; /* antes 40px */
+    --width: 135px; /* antes 110px */
+    --border: 2px;
+  }
   

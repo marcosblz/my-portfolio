@@ -43,3 +43,11 @@ body {
   position: relative;
   z-index: 1;  /* aseguremos z layering */
 }
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+html {
+  font-size: 125%; /* ← Esto hace que 1rem = 20px en vez de 16px */
+}

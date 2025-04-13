@@ -1,5 +1,6 @@
 import './Hero.css';
 import marcosImg from '../assets/marcos.png';
+import { FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 const Hero = ({ theme }) => {
   const isDark = theme === 'dark';
@@ -20,11 +21,20 @@ const Hero = ({ theme }) => {
             <span className="dot" /> Disponible para nuevos proyectos
           </div>
 
-          <a href="#projects" className="cta-button">Ver mis proyectos</a>
+          <a href="#projects" className="cta-button">Ver mi último proyecto</a>
 
           <div className="social-links">
-            <a href="mailto:marcos@example.com" target="_blank" rel="noopener noreferrer">📧</a>
-            <a href="https://linkedin.com/in/marcosbaeza" target="_blank" rel="noopener noreferrer">💼</a>
+          <a
+              href="mailto:marcosbaezalopez@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Correo electrónico"
+            >
+              <FaEnvelope />
+            </a>
+            <a href="https://www.linkedin.com/in/marcos-baeza-952080244/" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin />
+            </a>
           </div>
         </div>
       </div>
