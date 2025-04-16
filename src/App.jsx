@@ -1,5 +1,6 @@
 import './App.css';
 import Hero from './components/Hero';
+import Projects from './components/Projects';
 import Background from './components/Background';
 import ThemeToggle from './components/ThemeToggle';
 import Navbar from './components/Navbar';
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <Hero theme={theme} />
+      <Projects />
       <Background theme={theme} />
       <div className="theme-toggle-container">
         <ThemeToggle theme={theme} toggleTheme={toggleTheme} />

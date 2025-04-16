@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <nav id="cubicle">
       <ul className="links">
-        <li><a href="#" data-title="Inicio"></a></li>
+        <li><a href="#hero" data-title="Inicio"></a></li>
         <li><a href="#about" data-title="Sobre mi"></a></li>
         <li><a href="#work" data-title="Camino"></a></li>
         <li><a href="#blog" data-title="Estudios"></a></li>

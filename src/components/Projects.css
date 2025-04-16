@@ -1,0 +1,80 @@
+.projects {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;    /* ✅ Alinear al inicio verticalmente */
+    justify-content: center;
+    background: transparent;
+    scroll-snap-align: start;
+    padding-top: 60px;          /* 🧽 Añade un pequeño espacio arriba opcional */
+    box-sizing: border-box;
+  }
+  
+  
+  .projects-container {
+    max-width: 1000px;
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  
+  
+  .projects h2 {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+  }
+  
+  .projects p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-bottom: 40px;
+  }
+  
+  .projects-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  
+  .project-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid currentColor;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .project-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  
+  .project-card p {
+    font-size: 1rem;
+    opacity: 0.85;
+    margin-bottom: 10px;
+  }
+  
+  .project-link {
+    font-weight: 600;
+    text-decoration: underline;
+    color: inherit;
+  }
+  
+  .hero,
+.projects {
+  scroll-snap-align: start;
+  height: 100vh;
+}

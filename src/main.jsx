@@ -8,3 +8,10 @@ createRoot(document.getElementById('root')).render(
     <App />
   </StrictMode>,
 )
+
+window.addEventListener('wheel', e => e.preventDefault(), { passive: false });
+window.addEventListener('keydown', e => {
+  if (['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', ' '].includes(e.key)) {
+    e.preventDefault();
+  }
+});

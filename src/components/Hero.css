@@ -10,6 +10,7 @@
   width: 100%;
   position: relative;
   z-index: 2;
+  scroll-margin-top: 100px;
 }
 
 .hero-wrapper {
@@ -258,4 +259,10 @@
 
 .hero.dark .social-links a {
   color: #fff;
+}
+
+.hero,
+.projects {
+  scroll-snap-align: start;
+  height: 100vh;
 }

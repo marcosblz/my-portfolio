@@ -49,5 +49,37 @@ body {
 }
 
 html {
-  font-size: 125%; /* ← Esto hace que 1rem = 20px en vez de 16px */
+  font-size: 125%;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.App {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.App {
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE */
+}
+
+.App::-webkit-scrollbar {
+  display: none;               /* Chrome */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* 🔥 Bloquea todo scroll, incluso con rueda */
+  height: 100vh;
 }

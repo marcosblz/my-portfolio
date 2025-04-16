@@ -71,8 +71,9 @@ button:focus-visible {
 html, body {
   margin: 0;
   padding: 0;
-  height: 100vh;
-  overflow: hidden; /* ❌ elimina scroll vertical */
+  min-height: 100vh; /* ✅ deja que el contenido sea más alto si hace falta */
+  overflow-x: hidden; /* ✅ bloqueá solo scroll horizontal si querés */
+  scroll-behavior: smooth;
 }
 
 html {

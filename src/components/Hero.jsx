@@ -6,7 +6,7 @@ const Hero = ({ theme }) => {
   const isDark = theme === 'dark';
 
   return (
-    <section className={`hero ${isDark ? 'dark' : 'light'}`}>
+    <section id="hero" className={`hero ${isDark ? 'dark' : 'light'}`}>
       <div className="hero-wrapper">
         <div className="hero-img-container">
           <img src={marcosImg} alt="Marcos Baeza" className="hero-avatar" />
@@ -24,7 +24,7 @@ const Hero = ({ theme }) => {
           <a href="#projects" className="cta-button">Ver mi último proyecto</a>
 
           <div className="social-links">
-          <a
+            <a
               href="mailto:marcosbaezalopez@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -32,7 +32,11 @@ const Hero = ({ theme }) => {
             >
               <FaEnvelope />
             </a>
-            <a href="https://www.linkedin.com/in/marcos-baeza-952080244/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.linkedin.com/in/marcos-baeza-952080244/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaLinkedin />
             </a>
           </div>
