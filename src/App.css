@@ -1,32 +1,30 @@
-body {
+html, body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  overflow: hidden; /* 🔒 bloquea scroll manual */
+  scroll-behavior: smooth;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  background: transparent;
   font-family: 'Nunito', sans-serif;
-  min-height: 100vh;
-  background-image: url('./assets/bgc.png'); /* Ruta relativa */
+  background-image: url('./assets/bgc.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background: transparent;
 }
 
-
-.theme-toggle-container {
-  position: fixed;
-  top: 40px;       /* ↘️ más abajo */
-  right: 40px;     /* ↙️ más hacia la izquierda */
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  height: fit-content;
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  height: 100vh;
+  z-index: 1;
 }
 
-
-
-
-/* Navbar centrado abajo */
 .navbar-container {
   position: fixed;
   bottom: 30px;
@@ -36,50 +34,14 @@ body {
   z-index: 5;
 }
 
-.App {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
-  z-index: 1;  /* aseguremos z layering */
-}
-
-:root {
-  font-family: 'Inter', system-ui, sans-serif;
-}
-
-html {
-  font-size: 125%;
-  scroll-behavior: smooth;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-}
-
-.App {
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-}
-
-.App {
-  scrollbar-width: none;       /* Firefox */
-  -ms-overflow-style: none;    /* IE */
-}
-
-.App::-webkit-scrollbar {
-  display: none;               /* Chrome */
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden; /* 🔥 Bloquea todo scroll, incluso con rueda */
-  height: 100vh;
+.theme-toggle-container {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: fit-content;
 }

@@ -79,3 +79,19 @@ html, body {
 html {
   font-size: 20px; /* ← 1rem = 20px (en vez de 16px) */
 }
+
+:root {
+  --text-color: #111;
+  --card-background: #fff;
+  --card-border: #ccc;
+  --image-placeholder: #eee;
+  --image-text: #555;
+}
+
+[data-theme='dark'] {
+  --text-color: #fff;
+  --card-background: #1f1f1f;
+  --card-border: #555;
+  --image-placeholder: #2d2d2d;
+  --image-text: #aaa;
+}

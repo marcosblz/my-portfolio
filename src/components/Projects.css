@@ -1,80 +1,132 @@
-.projects {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: flex-start;    /* ✅ Alinear al inicio verticalmente */
-    justify-content: center;
-    background: transparent;
-    scroll-snap-align: start;
-    padding-top: 60px;          /* 🧽 Añade un pequeño espacio arriba opcional */
-    box-sizing: border-box;
-  }
-  
-  
-  .projects-container {
-    max-width: 1000px;
-    width: 100%;
-    padding: 0 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  
-  
-  
-  .projects h2 {
-    font-size: 2.4rem;
-    margin-bottom: 12px;
-  }
-  
-  .projects p {
-    font-size: 1.1rem;
-    opacity: 0.8;
-    margin-bottom: 40px;
-  }
-  
-  .projects-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-  }
-  
-  
-  .project-card {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid currentColor;
-    border-radius: 10px;
-    padding: 20px;
-    transition: transform 0.3s ease;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .project-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-  }
-  
-  .project-card p {
-    font-size: 1rem;
-    opacity: 0.85;
-    margin-bottom: 10px;
-  }
-  
-  .project-link {
-    font-weight: 600;
-    text-decoration: underline;
-    color: inherit;
-  }
-  
-  .hero,
-.projects {
-  scroll-snap-align: start;
+.projects-section {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  transition: background-color 0.5s ease;
+}
+
+.projects-container {
+  background-color: var(--container-bg);
+  border: 1.5px solid var(--container-border);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 1180px;
+  width: 100%;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(12px);
+  transition: all 0.4s ease;
+}
+
+.projects-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: var(--text-color);
+  transition: color 0.4s ease;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  transition: all 0.3s ease;
+}
+
+.project-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.project-image {
+  width: 100%;
+  height: 160px;
+  border-radius: 12px;
+  background-color: var(--img-placeholder);
+  border: 1.5px solid var(--card-border);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--text-soft);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.project-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.project-desc {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+/* ======= THEME VARIABLES ======= */
+
+:root {
+  --text-color: #111;
+  --text-soft: #444;
+  --card-bg: #fff;
+  --card-border: #ddd;
+  --img-placeholder: #f3f3f3;
+  --container-bg: rgba(255, 255, 255, 0.6);
+  --container-border: rgba(0, 0, 0, 0.1);
+}
+
+body[data-theme='dark'] {
+  --text-color: #fff;
+  --text-soft: #bbb;
+  --card-bg: rgba(35, 35, 35, 0.9);
+  --card-border: #444;
+  --img-placeholder: rgba(255, 255, 255, 0.05);
+  --container-bg: rgba(0, 0, 0, 0.5);
+  --container-border: rgba(255, 255, 255, 0.1);
+}
+
+.projects-section {
+  animation: fadeIn 1s ease-in-out both;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.project-card,
+.project-image,
+.project-name,
+.project-desc {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -13,16 +13,24 @@ const Navbar = () => {
     });
   }, []);
 
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
+    const section = document.querySelector(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <nav id="cubicle">
       <ul className="links">
-        <li><a href="#hero" data-title="Inicio"></a></li>
-        <li><a href="#about" data-title="Sobre mi"></a></li>
-        <li><a href="#work" data-title="Camino"></a></li>
-        <li><a href="#blog" data-title="Estudios"></a></li>
-        <li><a href="#skills" data-title="Habilidades"></a></li>
-        <li><a href="#projects" data-title="Proyectos"></a></li>
-        <li><a href="#contact" data-title="Contacto"></a></li>
+        <li><a href="#hero" data-title="Inicio" onClick={(e) => handleNavClick(e, '#hero')}></a></li>
+        <li><a href="#about" data-title="Sobre mi" onClick={(e) => handleNavClick(e, '#about')}></a></li>
+        <li><a href="#work" data-title="Camino" onClick={(e) => handleNavClick(e, '#work')}></a></li>
+        <li><a href="#blog" data-title="Estudios" onClick={(e) => handleNavClick(e, '#blog')}></a></li>
+        <li><a href="#skills" data-title="Habilidades" onClick={(e) => handleNavClick(e, '#skills')}></a></li>
+        <li><a href="#projects" data-title="Proyectos" onClick={(e) => handleNavClick(e, '#projects')}></a></li>
+        <li><a href="#contact" data-title="Contacto" onClick={(e) => handleNavClick(e, '#contact')}></a></li>
       </ul>
     </nav>
   );

@@ -11,9 +11,10 @@ function App() {
 
   return (
     <div className="App">
+      <Background theme={theme} />
       <Hero theme={theme} />
       <Projects />
-      <Background theme={theme} />
+
       <div className="theme-toggle-container">
         <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
       </div>
