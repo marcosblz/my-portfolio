@@ -1,19 +1,29 @@
+import React from 'react';
 import './Projects.css';
 
 const Projects = () => {
+  const projects = [
+    {
+      id: 1,
+      name: 'Tamagotchi Java',
+      description: 'Simulación completa de un tamagotchi programado en Java.',
+    },
+    // Puedes agregar más proyectos aquí
+  ];
+
   return (
-    <section id="projects" className="projects-section">
+    <section id="projects" className="projects-section"> {/* 💡 Añadido el id */}
       <h2 className="projects-title">Mis proyectos</h2>
-      <div className="projects-grid">
-        {Array.from({ length: 3 }).map((_, i) => (
-          <div className="project-card" key={i}>
-            <div className="project-image">Imagen</div>
-            <div className="project-info">
-              <h3 className="project-name">Proyecto {i + 1}</h3>
-              <p className="project-desc">Descripción breve del proyecto {i + 1}.</p>
+      <div className="projects-container">
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <div key={project.id} className="project-card">
+              <div className="project-image">Imagen</div>
+              <h3 className="project-name">{project.name}</h3>
+              <p className="project-desc">{project.description}</p>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
