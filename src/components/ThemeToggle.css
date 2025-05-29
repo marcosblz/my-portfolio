@@ -1,0 +1,42 @@
+/* src/components/ThemeToggle.css */
+
+@import '../styles/variables.css'; /* para poder usar tus variables de espacio y color */
+
+/* Ajustes globales para el toggle */
+:root {
+  --toggle-size: 4.5rem;      /* tamaño de la luna/sol */
+  --toggle-offset: 25px;      /* espacio desde la esquina */
+}
+
+/* Contenedor siempre visible, encima de todo */
+.theme-toggle-container {
+  position: fixed;
+  top: var(--toggle-offset);
+  right: var(--toggle-offset);
+  z-index: 1000;               /* por encima del fondo y del resto */
+  pointer-events: auto;
+}
+
+/* Botón del toggle */
+.theme-toggle,
+.theme-toggle svg {
+  width: var(--toggle-size) !important;
+  height: var(--toggle-size) !important;
+  font-size: var(--toggle-size) !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  cursor: pointer !important;
+  color: currentColor !important;
+}
+
+/* Opcional: distintos colores según tema */
+html[data-theme='light'] .theme-toggle {
+  color: var(--color-text-dark);
+}
+html[data-theme='dark'] .theme-toggle {
+  color: var(--color-text-light);
+}

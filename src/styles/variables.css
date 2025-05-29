@@ -1,0 +1,39 @@
+/* src/styles/variables.css */
+:root {
+  /* colores */
+  --color-bg:            #242424;
+  --color-text:          #ffffff;
+
+  /* colores neutros para fondos y bordes */
+  --color-neutral-100:   #ffffff;
+  --color-neutral-200:   #f0f0f0;
+  --color-neutral-300:   #d9d9d9;
+  --color-neutral-400:   #bfbfbf;
+  --color-neutral-500:   #8c8c8c;
+  --color-neutral-600:   #595959;
+  --color-neutral-700:   #262626;
+  --color-neutral-800:   #111111;
+
+  /* colores de estado (éxito / alerta) */
+  --color-success-500:   #39ff14;
+  --color-success-700:   #1c8c0c;
+
+  /* tipografía */
+  --font-base:           1rem;
+  --font-lg:             1.25rem;
+
+  /* espaciados */
+  --space-xs:            0.25rem;
+  --space-sm:            0.5rem;
+  --space-md:            1rem;
+  --space-lg:            2rem;
+  --space-xl:            4rem;
+
+  /* ancho máximo de contenido */
+  --content-max-width:   1200px;
+
+  /* breakpoints */
+  --bp-sm:               480px;
+  --bp-md:               768px;
+  --bp-lg:               1024px;
+}

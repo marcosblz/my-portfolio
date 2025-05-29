@@ -74,17 +74,20 @@
 }
 
 .navbar-container {
-    position: fixed;
-    bottom: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-  }
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: max-content;
+  max-width: 90%;
+  padding: 0 10px;
+}
+
   
   
-  :root {
+:root {
     --height: 50px; /* antes 40px */
     --width: 135px; /* antes 110px */
     --border: 2px;
   }
-  

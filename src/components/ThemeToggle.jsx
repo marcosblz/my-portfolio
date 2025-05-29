@@ -1,4 +1,5 @@
 import "@theme-toggles/react/css/Classic.css";
+import './ThemeToggle.css';    // ← aquí
 import { Classic } from "@theme-toggles/react";
 
 const ThemeToggle = ({ theme, toggleTheme }) => {

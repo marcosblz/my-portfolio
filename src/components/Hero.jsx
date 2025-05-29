@@ -18,7 +18,7 @@ const Hero = ({ theme }) => {
           <p>Construyendo soluciones digitales desde el código hasta la nube.</p>
 
           <div className="availability-badge">
-            <span className="dot" /> Disponible para nuevos proyectos
+            <span className="dot" />  Disponible para nuevos proyectos
           </div>
 
           <a href="#projects" className="cta-button">Ver mi último proyecto</a>

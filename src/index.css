@@ -1,97 +1,77 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+/* ——— Variables & Reset ——— */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Colores claros/oscuro */
+  --color-bg-light: #ffffff;
+  --color-text-light: #111111;
+  --color-bg-dark: #111111;
+  --color-text-dark: #ffffff;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Botones */
+  --color-button-bg-light: rgba(245,245,245,0.8);
+  --color-button-text-light: #000000;
+  --color-button-bg-dark: rgba(34,34,34,0.8);
+  --color-button-text-dark: #ffffff;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Toggle (inverso al tema) */
+  --color-toggle-light: #111111;
+  --color-toggle-dark: #ffffff;
+
+  /* Espaciados y tipografías */
+  --font-base: 1rem;
+  --font-lg: 1.25rem;
+  --space-xs: 0.25rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --content-max-width: 1200px;
+
+  /* Breakpoint horizontal (≥500px) */
+  --bp-horiz: 500px;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+/* ——— Temas ——— */
+body[data-theme='light'] {
+  --color-bg: var(--color-bg-light);
+  --color-text: var(--color-text-light);
+  --color-button-bg: var(--color-button-bg-light);
+  --color-button-text: var(--color-button-text-light);
+  --color-toggle-icon: var(--color-toggle-dark);
 }
-a:hover {
-  color: #535bf2;
+body[data-theme='dark'] {
+  --color-bg: var(--color-bg-dark);
+  --color-text: var(--color-text-dark);
+  --color-button-bg: var(--color-button-bg-dark);
+  --color-button-text: var(--color-button-text-dark);
+  --color-toggle-icon: var(--color-toggle-light);
 }
 
+/* Reset global */
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  background-color: #242424;
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100%;
+  overflow-y: auto;
 }
+/* Forzar heredar color en todo */
+body * { color: inherit; }
 
-
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh; /* ✅ deja que el contenido sea más alto si hace falta */
-  overflow-x: hidden; /* ✅ bloqueá solo scroll horizontal si querés */
-  scroll-behavior: smooth;
-}
-
-html {
-  font-size: 20px; /* ← 1rem = 20px (en vez de 16px) */
-}
-
-:root {
-  --text-color: #111;
-  --card-background: #fff;
-  --card-border: #ccc;
-  --image-placeholder: #eee;
-  --image-text: #555;
-}
-
-[data-theme='dark'] {
-  --text-color: #fff;
-  --card-background: #1f1f1f;
-  --card-border: #555;
-  --image-placeholder: #2d2d2d;
-  --image-text: #aaa;
+/* ——— Theme Toggle (icono) ——— */
+.theme-toggle {
+  font-size: 4rem !important;      /* luna/sol más grande */
+  width: 4rem !important;
+  height: 4rem !important;
+  color: var(--color-toggle-icon) !important; /* inverso al tema */
 }

@@ -1,47 +1,8 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  overflow: hidden; /* 🔒 bloquea scroll manual */
-  scroll-behavior: smooth;
-  font-family: 'Inter', system-ui, sans-serif;
-}
-
-body {
-  background: transparent;
-  font-family: 'Nunito', sans-serif;
-  background-image: url('./assets/bgc.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
+/* src/App.css */
 .App {
-  max-width: 1200px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--space-sm);
   position: relative;
-  height: 100vh;
-  z-index: 1;
-}
-
-.navbar-container {
-  position: fixed;
-  bottom: 30px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 5;
-}
-
-.theme-toggle-container {
-  position: fixed;
-  top: 40px;
-  right: 40px;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  height: fit-content;
+  /* height: auto; por defecto crece */
 }
