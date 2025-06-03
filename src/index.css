@@ -39,6 +39,7 @@ body[data-theme='light'] {
   --color-button-bg: var(--color-button-bg-light);
   --color-button-text: var(--color-button-text-light);
   --color-toggle-icon: var(--color-toggle-dark);
+   --color-toggle-icon: #111111;
 }
 body[data-theme='dark'] {
   --color-bg: var(--color-bg-dark);
@@ -46,6 +47,7 @@ body[data-theme='dark'] {
   --color-button-bg: var(--color-button-bg-dark);
   --color-button-text: var(--color-button-text-dark);
   --color-toggle-icon: var(--color-toggle-light);
+  --color-toggle-icon: #ffffff;
 }
 
 /* Reset global */
@@ -67,11 +69,3 @@ body {
 }
 /* Forzar heredar color en todo */
 body * { color: inherit; }
-
-/* ——— Theme Toggle (icono) ——— */
-.theme-toggle {
-  font-size: 4rem !important;      /* luna/sol más grande */
-  width: 4rem !important;
-  height: 4rem !important;
-  color: var(--color-toggle-icon) !important; /* inverso al tema */
-}

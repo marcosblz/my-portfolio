@@ -1,0 +1,85 @@
+:root {
+  --height: 50px;
+  --width: 135px;
+  --border: 2px;
+}
+
+.navbar-container {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: max-content;
+  max-width: 90%;
+  padding: 0 10px;
+}
+
+#cubicle {
+  height: var(--height);
+}
+
+#cubicle > .links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#cubicle > .links li {
+  flex: 1;
+  min-width: var(--width);
+  height: var(--height);
+  margin: 0 0 0 calc(-1 * var(--border));
+  perspective: 1000px;
+  z-index: 1;
+}
+
+#cubicle > .links li:first-child {
+  margin-left: 0;
+}
+
+#cubicle > .links li:hover {
+  z-index: 2;
+}
+
+#cubicle > .links a {
+  display: block;
+  height: var(--height);
+  position: relative;
+  text-decoration: none;
+  transform-style: preserve-3d;
+  transform: translateZ(calc(-1 * var(--height) / 2));
+  transition: transform 0.5s cubic-bezier(.08, .82, .17, 1);
+}
+
+#cubicle > .links a:hover {
+  transform: translateZ(calc(-1 * var(--height) / 2)) rotateX(-90deg);
+}
+
+#cubicle > .links a::before,
+#cubicle > .links a::after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--width);
+  height: var(--height);
+  position: absolute;
+  border: var(--border) solid var(--color-text);
+  content: attr(data-title);
+}
+
+#cubicle > .links a::before {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transform: rotateY(0deg) translateZ(calc(var(--height) / 2));
+}
+
+#cubicle > .links a::after {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  transform: rotateX(90deg) translateZ(calc(var(--height) / 2));
+}

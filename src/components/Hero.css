@@ -1,83 +1,90 @@
-/* src/components/Hero.css */
 @import '../styles/variables.css';
 
-/* ========== Hero Section ========== */
 .hero {
-  position: relative;
   width: 100%;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  padding: var(--space-lg) var(--space-sm);
+  padding: 2rem var(--space-sm); /* más aire general */
   box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ========== Wrapper Interno (imagen + texto) ========== */
 .hero-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-md);
+  gap: 1.2rem;
   width: 100%;
   max-width: var(--content-max-width);
   margin: 0 auto;
-  box-sizing: border-box;
+  text-align: center;
+  padding-top: 0.5rem;
 }
 
-/* ========== Imagen ========== */
 .hero-img-container {
-  width: clamp(200px, 50%, 300px);
+  width: clamp(160px, 35vw, 240px);
   aspect-ratio: 1/1;
   border-radius: 50%;
   overflow: hidden;
-  margin: 0 auto;
 }
 .hero-img-container img {
-  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* ========== Texto ========== */
 .hero-content {
-  text-align: center;
-  max-width: 600px;
-  margin: var(--space-md) auto 0;
-}
-.hero-content h1,
-.hero-content h2,
-.hero-content p {
-  margin: 0.5rem 0;
-  color: var(--color-text);
+  margin-top: 0;
 }
 
-/* ========== Botones base (badge + CTA) ========== */
+.hero-content h1 {
+  font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0.35rem 0;
+}
+
+.hero-content h2 {
+  font-size: clamp(1.2rem, 3.5vw, 1.7rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0.35rem 0;
+}
+
+.hero-content p {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 400;
+  line-height: 1.4;
+  opacity: 0.9;
+  margin: 0.35rem 0;
+}
+
+/* Botones */
 .availability-badge,
 .cta-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-xs);
-  height: 3rem;
-  padding: 0 var(--space-lg);
-  margin: var(--space-md) var(--space-md) 0 0;
-  border-radius: 0.5rem;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0.5rem 0 0;
+  border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  border: 1px solid;
 }
 
-/* Punto parpadeante - color definido por tema */
 .availability-badge .dot {
   width: 0.75rem;
   height: 0.75rem;
   border-radius: 50%;
-  margin-right: var(--space-sm);
+  margin-right: 0.5rem;
   animation: pulse-green 1.5s ease-in-out infinite;
 }
 
-/* keyframes para pulso verde clarito */
 @keyframes pulse-green {
   0%, 100% {
     box-shadow: 0 0 0 0 rgba(124, 252, 0, 0.7);
@@ -87,55 +94,46 @@
   }
 }
 
-/* ========== Iconos sociales ========== */
+/* Iconos sociales */
 .social-links {
   display: flex;
   gap: var(--space-md);
-  font-size: 2rem;
-  margin: var(--space-md) auto 0;
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  justify-content: center;
 }
 .social-links a {
-  color: currentColor;
-  transition: color 0.3s ease, transform 0.2s ease;
+  color: inherit;
+  transition: transform 0.2s ease, color 0.3s ease;
 }
 .social-links a:hover {
-  color: var(--color-primary);
   transform: scale(1.1);
 }
 
-/* ========== DESKTOP / TABLET (≥500px) ========== */
-@media (min-width: 500px) {
-  .hero {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--space-lg) var(--space-md);
-  }
+/* Responsive escritorio */
+@media (min-width: 768px) {
   .hero-wrapper {
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
+    text-align: left;
     gap: var(--space-lg);
   }
+
   .hero-img-container {
-    margin: 0;
     flex: 0 0 30%;
-    max-width: 30%;
   }
+
   .hero-content {
-    margin: 0;
-    flex: 0 0 60%;
-    max-width: 60%;
-    text-align: left;
+    flex: 0 0 65%;
+  }
+
+  .cta-button,
+  .availability-badge {
+    margin: 1rem 1rem 0 0;
   }
 }
 
 /* ========== Tema claro ========== */
-body[data-theme='light'] .hero-content h1,
-body[data-theme='light'] .hero-content h2,
-body[data-theme='light'] .hero-content p {
-  color: var(--color-neutral-800);
-}
 body[data-theme='light'] .availability-badge {
   background-color: var(--color-neutral-200);
   border: 1px solid #000;
@@ -154,11 +152,6 @@ body[data-theme='light'] .cta-button:hover {
 }
 
 /* ========== Tema oscuro ========== */
-body[data-theme='dark'] .hero-content h1,
-body[data-theme='dark'] .hero-content h2,
-body[data-theme='dark'] .hero-content p {
-  color: var(--color-neutral-100);
-}
 body[data-theme='dark'] .availability-badge {
   background-color: var(--color-neutral-700);
   border: 1px solid #fff;
