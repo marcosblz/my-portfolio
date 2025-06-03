@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import './NavbarSlide.css';
-import ThemeToggle from './ThemeToggle';
 
-const NavbarSlide = ({ theme, toggleTheme }) => {
+const NavbarSlide = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleNavClick = (e, id) => {
@@ -44,10 +43,6 @@ const NavbarSlide = ({ theme, toggleTheme }) => {
           <li><a href="#projects" onClick={(e) => handleNavClick(e, '#projects')}>Proyectos</a></li>
           <li><a href="#contact" onClick={(e) => handleNavClick(e, '#contact')}>Contacto</a></li>
         </ul>
-
-        <div className="mobile-theme-toggle">
-          <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-        </div>
       </nav>
     </>
   );
