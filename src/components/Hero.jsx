@@ -17,11 +17,13 @@ const Hero = ({ theme }) => {
           <h2>Fullstack Developer con enfoque backend</h2>
           <p>Construyendo soluciones digitales desde el código hasta la nube.</p>
 
-          <div className="availability-badge">
-            <span className="dot" />  Disponible para nuevos proyectos
-          </div>
+          <div className="hero-buttons">
+            <div className="availability-badge">
+              <span className="dot" /> Disponible para nuevos proyectos
+            </div>
 
-          <a href="#projects" className="cta-button">Ver mi último proyecto</a>
+            <a href="#projects" className="cta-button">Ver mi último proyecto</a>
+          </div>
 
           <div className="social-links">
             <a
